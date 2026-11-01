@@ -319,7 +319,7 @@ html.editing [contenteditable="true"]:focus{outline:2px solid var(--accent);back
   </div>
 
   <div class="charts">
-    <div class="chart"><h3>נפח רשת</h3><p>מיליארד דולר · Q3'26 מפוצל ל-Klarna · Q4 לפי טווח התחזית</p><div id="c-vol"></div></div>
+    <div class="chart"><h3>נפח רשת</h3><p>מיליארד דולר. ברבעון הרביעי מוצג טווח התחזית של החברה.</p><div class="legend"><span><i style="background:var(--accent);opacity:.35"></i>Klarna, שיצאה מהרשת</span><span><i style="border:1.5px dashed var(--accent)"></i>תחזית Q4</span></div><div id="c-vol"></div></div>
     <div class="chart"><h3>FRLPC כאחוז מהנפח</h3><p>הרצועה: טווח היעד של ההנהלה, 4%–5%</p><div id="c-fr"></div></div>
     <div class="chart"><h3>רווח נקי GAAP מיוחס</h3><p>מיליוני דולר · Q4 לפי טווח התחזית</p><div id="c-ni"></div></div>
     <div class="chart"><h3>התאמות שווי על התיק</h3><p>מיליוני דולר, ירידות ערך ברוטו</p><div class="legend"><span><i style="background:var(--accent)"></i>נרשם ברווח והפסד</span><span><i style="border:1.5px dashed var(--neg)"></i>סך הכול, כולל רווח כולל אחר</span></div><div id="c-fv"></div></div>
@@ -650,7 +650,6 @@ html.editing [contenteditable="true"]:focus{outline:2px solid var(--accent);back
         svg.appendChild(el("rect",{x:x,y:y(base),width:bw,height:y(0)-y(base),"class":cls}));
         if(d.k){
           svg.appendChild(el("rect",{x:x,y:y(d.v),width:bw,height:y(base)-y(d.v),"class":"bar-k"}));
-          svg.appendChild(el("text",{x:x+bw+3,y:(y(d.v)+y(base))/2+3.5,"text-anchor":"start"},"Klarna"));
         }
         svg.appendChild(el("text",{x:cx,y:y(d.v)-5,"text-anchor":"middle","class":"vl"},cfg.vf(d.v)));
       }
