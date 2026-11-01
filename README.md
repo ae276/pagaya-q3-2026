@@ -1,7 +1,7 @@
-# פאגאיה ברבעון השלישי של 2026
+# Pagaya Q3 2026 review / פאגאיה ברבעון השלישי של 2026
 
-סקירה ודעה על דוחות הרבעון השלישי של 2026 של Pagaya Technologies (NASDAQ: PGY).
+- English: https://ae276.github.io/pagaya-q3-2026/en/
+- עברית: https://ae276.github.io/pagaya-q3-2026/
 
-העמוד: https://ae276.github.io/pagaya-q3-2026/
-
-הסקירה משקפת דעה אישית בלבד, ואינה ייעוץ השקעות או המלצה לקנייה או למכירה של ניירות ערך.
+Personal opinion only; not investment advice or a recommendation to buy or sell securities.
+הסקירה משקפת דעה אישית בלבד, ואינה ייעוץ השקעות.
