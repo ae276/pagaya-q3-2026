@@ -285,7 +285,7 @@ svg .sub{font-size:9.5px}
   <p class="note">כרית השכבה הנחותה: פי כמה ההפסד יכול לעלות מעל הצפי לפני שהשכבה המדורגת הנמוכה ביותר (F-2) נפגעת. הדוח של <span class="n">PAID 2026-4</span> לא היה בידי, ולכן הכרית שלה חסרה.</p>
 
   <div class="charts">
-    <div class="chart"><h3>צפי ההפסד לפי שנת בציר: מקורי מול נוכחי</h3><p>אחוז מהתיק, ממוצע משוקלל לפי גודל העסקה (סך האג"ח בהנפקה). מעל כל זוג: השינוי בצפי מאז ההנפקה</p><div class="legend"><span><i style="background:var(--hatch)"></i>בעת ההנפקה</span><span><i style="background:var(--accent)"></i>היום</span></div><div id="c-bc"></div></div>
+    <div class="chart"><h3>צפי ההפסד לפי שנת בציר: מקורי מול נוכחי</h3><p>אחוז מהתיק, ממוצע משוקלל לפי גודל העסקה (סך האג"ח בהנפקה). מעל כל זוג: הפער בנקודות האחוז, צפי בעת ההנפקה פחות הצפי היום (מינוס = הצפי עלה)</p><div class="legend"><span><i style="background:var(--hatch)"></i>בעת ההנפקה</span><span><i style="background:var(--accent)"></i>היום</span></div><div id="c-bc"></div></div>
     <div class="chart"><h3>ריבית למשקיעי האג"ח</h3><p>קופון משוקלל בעסקאות ההלוואות האישיות של 2026</p><div id="c-cpn"></div></div>
     <div class="chart"><h3>המרווח העודף</h3><p>אחוז שנתי, אחרי ריבית למשקיעים ועמלות שירות</p><div id="c-xs"></div></div>
     <div class="chart"><h3>כרית הביטחון בעסקת <span class="n">2025-R2</span></h3><p>עודף הבטוחות<sup class="fn"><a href="#g-11" aria-label="הערה 11">11</a></sup> כאחוז מהתיק, לפי דוח. זו העסקה שנכנסה לבחינת הורדת דירוג</p><div id="c-oc"></div></div>
@@ -572,11 +572,11 @@ svg .sub{font-size:9.5px}
     svg.setAttribute("aria-label","צפי ההפסד הממוצע המשוקלל של KBRA לפי שנת בציר, בעת ההנפקה מול היום");
     var d=[["2021",14.12,22.10],["2022",14.10,21.53],["2023",19.90,19.00],["2024",18.17,18.25],["2025",16.97,17.19],["2026",16.29,16.29],["R",12.13,13.21]],slot=f.PW/d.length,bw=slot*0.34;
     d.forEach(function(p,i){
-      var cx=L+slot*i+slot/2,ch=(p[2]/p[1]-1)*100,top=Math.max(p[1],p[2]);
+      var cx=L+slot*i+slot/2,ch=p[1]-p[2],top=Math.max(p[1],p[2]);
       svg.appendChild(el("rect",{x:cx-bw-1,y:y(p[1]),width:bw,height:y(0)-y(p[1]),"class":"bar-old"}));
       svg.appendChild(el("rect",{x:cx+1,y:y(p[2]),width:bw,height:y(0)-y(p[2]),"class":"bar"}));
-      var lbl=Math.abs(ch)<0.5?"0%":(ch>0?"+":"−")+Math.abs(ch).toFixed(0)+"%";
-      svg.appendChild(el("text",{x:cx,y:y(top)-5,"text-anchor":"middle","class":"vl","style":ch>=10?"fill:var(--neg)":""},lbl));
+      var lbl=Math.abs(ch)<0.05?"0.0":(ch>0?"+":"−")+Math.abs(ch).toFixed(1);
+      svg.appendChild(el("text",{x:cx,y:y(top)-5,"text-anchor":"middle","class":"vl","style":ch<=-2?"fill:var(--neg)":""},lbl));
       svg.appendChild(el("text",{x:cx,y:H-8,"text-anchor":"middle"},p[0]==="R"?"מיחזור":p[0]));
     });
     put("c-bc",svg);
